@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Una pregunta especial!</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            overflow: hidden; /* Evita el desplazamiento durante la animación */
+        }
+
+        /* Estilos para el girasol */
+        .girasol {
+            font-size: 30em; /* Tamaño gigante */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: mostrarGirasol 8s ease-in-out forwards;
+        }
+
+        /* Estilos para la frase (oculta inicialmente) */
+        .frase {
+            opacity: 0;
+            font-size: 2.5em;
+            color: #ff6f61;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: aparecerFrase 1s ease-in-out 8s forwards;
+        }
+
+        /* Animación para el girasol */
+        @keyframes mostrarGirasol {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                display: none; /* Oculta el girasol después de la animación */
+            }
+        }
+
+        /* Animación para la frase */
+        @keyframes aparecerFrase {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Girasol gigante -->
+    <div class="girasol">🌻</div>
+
+    <!-- Frase (oculta inicialmente) -->
+    <div class="frase">
+        Princesa mía, ¿Puedo ser tu Valentín?, es que Te Amo Demasiado ❤️
+    </div>
+</body>
+</html>
