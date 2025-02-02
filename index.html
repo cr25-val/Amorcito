@@ -13,28 +13,71 @@
             padding: 0;
             margin: 0;
             overflow: hidden; /* Evita el desplazamiento durante la animación */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ocupa toda la altura de la pantalla */
         }
 
-        /* Estilos para el girasol */
+        /* Contenedor del girasol */
         .girasol {
             font-size: 30em; /* Tamaño gigante */
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             animation: mostrarGirasol 8s ease-in-out forwards;
         }
 
-        /* Estilos para la frase (oculta inicialmente) */
+        /* Contenedor de la frase */
         .frase {
             opacity: 0;
-            font-size: 2.5em;
+            text-align: center;
+            animation: aparecerFrase 1s ease-in-out 8s forwards;
+        }
+
+        /* Estilo para "Princesa mía" */
+        .princesa {
+            font-size: 4em;
             color: #ff6f61;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para "¿Puedo ser tu Valentín?" */
+        .pregunta {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        /* Contenedor de los botones */
+        .botones {
+            display: flex;
+            gap: 20px; /* Espacio entre los botones */
+        }
+
+        /* Estilo para los botones */
+        .boton {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ff6f61;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .boton:hover {
+            background-color: #e65a50;
+        }
+
+        /* Estilo para el mensaje "Te amo ❤️" */
+        .te-amo {
+            font-size: 5em;
+            color: #ff6f61;
+            display: none; /* Oculto inicialmente */
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            animation: aparecerFrase 1s ease-in-out 8s forwards;
         }
 
         /* Animación para el girasol */
@@ -65,7 +108,26 @@
 
     <!-- Frase (oculta inicialmente) -->
     <div class="frase">
-        Princesa mía, ¿Puedo ser tu Valentín?, es que Te Amo Demasiado ❤️
+        <div class="princesa">Princesa mía</div>
+        <div class="pregunta">¿Puedo ser tu Valentín?</div>
+        <div class="botones">
+            <button class="boton" onclick="mostrarTeAmo()">Sí</button>
+            <button class="boton" onclick="mostrarTeAmo()">Sí (no tienes otra opción)</button>
+        </div>
     </div>
+
+    <!-- Mensaje "Te amo ❤️" (oculto inicialmente) -->
+    <div class="te-amo">Te amo ❤️</div>
+
+    <script>
+        // Función para mostrar "Te amo ❤️"
+        function mostrarTeAmo() {
+            // Oculta el contenedor de la frase
+            document.querySelector('.frase').style.display = 'none';
+
+            // Muestra el mensaje "Te amo ❤️"
+            document.querySelector('.te-amo').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
